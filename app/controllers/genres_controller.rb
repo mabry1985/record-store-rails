@@ -14,6 +14,7 @@ class GenresController < ApplicationController
   end
 
   def create
+    @album = Album.find(:album)
     @artist = Artist.find(params[:artist_id])
     @genre = @artist.genres.new(genre_params)
     if @artist.save(@genre)

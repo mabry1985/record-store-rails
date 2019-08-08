@@ -5,7 +5,7 @@ class AddGenreAndJoinTable < ActiveRecord::Migration[5.2]
       t.timestamps
     end
 
-    create_table :artists_genres, id: false do |t|
+    create_table :artist_genres, id: false do |t|
       t.belongs_to :artist, index: true
       t.belongs_to :genre, index: true
     end
