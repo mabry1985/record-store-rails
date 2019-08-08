@@ -4,4 +4,7 @@ Rails.application.routes.draw do
     resources :songs
     resources :artists
   end
+  resources :artists do
+    resources :genres
+  end
 end

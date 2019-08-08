@@ -1,5 +1,5 @@
 <h1>Artist: <%= @artist.name %></h1>
-
+<p><%= link_to "Add a genre", new_artist_genre_path(@artist) %></p>
 <p><%= link_to "Edit artist", edit_album_artist_path(@album, @artist) %></p>
 <p><%= link_to "Delete artist", album_artist_path(@album, @artist),
                         :data => {:confirm => "Are you sure?",

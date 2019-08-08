@@ -1,0 +1,19 @@
+<h1>Artist: <%= @artist.name %></h1>
+<% if @artist.genres.any? %>
+  <h4>Here are the genres for this artist</h4>
+
+  <% @artist.genres.each do |genre| %>
+  <ul>
+    <li>
+      <%= link_to genre.name, artist_genre_path(@artist, genre) %>
+    </li>
+  </ul>
+  <% end %>
+<% else %>
+  <p>No genres are listed for this artist... yet...</p>
+<% end %>
+
+<p><%= link_to "Add a genre", new_artist_genre_path(@artist) %></p>
+
+
+<p><%= link_to "Return to albums", albums_path %></p>

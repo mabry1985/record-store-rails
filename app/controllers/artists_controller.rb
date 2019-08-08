@@ -46,7 +46,7 @@ def update
 end
 
 def destroy
-    @album = Album.find(params[:album_id])
+  @album = Album.find(params[:album_id])
   @artist = Artist.find(params[:id])
   @artist.destroy
   redirect_to album_path(@album)
