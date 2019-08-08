@@ -24,7 +24,6 @@ class AlbumsController < ApplicationController
 
   # Other controller methods go here.
 
-
   def edit
     @album = Album.find(params[:id])
     render :edit
@@ -36,7 +35,10 @@ class AlbumsController < ApplicationController
   end
 
   def update
+    @artist = artist.find(params[:artist_id])
     @album= Album.find(params[:id])
+    @album.artists.new(@artist)
+    @album.save
     if @album.update(album_params)
       redirect_to albums_path
     else
