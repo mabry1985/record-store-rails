@@ -28,6 +28,7 @@ def edit
 end
 
 def show
+
   @album = Album.find(params[:album_id])
   @song = Song.find(params[:id])
   render :show

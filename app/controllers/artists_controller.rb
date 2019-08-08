@@ -1,3 +1,4 @@
+require 'pry'
 class ArtistsController < ApplicationController
 
   def index
@@ -35,18 +36,20 @@ def show
 end
 
 def update
+  @album = Album.find(params[:album_id])
   @artist = Artist.find(params[:id])
   if @artist.update(artist_params)
-    redirect_to album_path(@artist.album)
+    redirect_to album_path(@album)
   else
     render :edit
   end
 end
 
 def destroy
+    @album = Album.find(params[:album_id])
   @artist = Artist.find(params[:id])
   @artist.destroy
-  redirect_to album_path(@artist.album)
+  redirect_to album_path(@album)
 end
 
 private

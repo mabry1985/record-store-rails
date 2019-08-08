@@ -1,7 +1,7 @@
 <h1><%= @album.name %></h1>
 <h2>Edit Artists</h2>
 
-<%= form_for @artist do |f| %>
+<%= form_for [@album, @artist] do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
   <%= f.submit %>
